@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthentiLens | Product Authenticity Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-blur bg1"></div>
+    <div class="bg-blur bg2"></div>
+
+    <main class="container">
+      <header class="hero">
+        <p class="badge">AI + Computer Vision</p>
+        <h1>AuthentiLens</h1>
+        <p>
+          Capture product images directly from your camera and estimate whether
+          an item is likely genuine or counterfeit.
+        </p>
+      </header>
+
+      <section class="card grid">
+        <div class="camera-wrap">
+          <video id="video" autoplay playsinline></video>
+          <canvas id="canvas" hidden></canvas>
+          <img id="snapshot" alt="Captured product" hidden />
+        </div>
+
+        <div class="controls">
+          <button id="startBtn" class="btn btn-primary">Start Camera</button>
+          <button id="captureBtn" class="btn" disabled>Capture</button>
+          <button id="predictBtn" class="btn" disabled>Analyze</button>
+
+          <div class="result" id="resultBox">
+            <p class="label">Prediction</p>
+            <p id="predictionText">Waiting for image...</p>
+            <p id="confidenceText" class="subtle"></p>
+          </div>
+
+          <div class="stats" id="datasetStats">Run dataset builder to generate local training data.</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
